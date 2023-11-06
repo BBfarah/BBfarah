@@ -21,7 +21,7 @@ public class LogSteps {
 	@Before
 	public void browserSetup () throws InterruptedException { 
 		System.out.println (" User Is inside browserSetup");
-		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
