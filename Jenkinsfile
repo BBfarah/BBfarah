@@ -8,7 +8,7 @@ pipeline {
             steps {
                 // Define the repository URL and credentials if needed
                 script {
-                    def repositoryUrl = 'https://github.com/dothmen/jenkinstes.git'
+                    def repositoryUrl = 'https://github.com/BBfarah/BBfarah.git'
  
                     checkout([$class: 'GitSCM', 
                         branches: [[name: 'main']], 
