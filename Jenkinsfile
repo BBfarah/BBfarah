@@ -30,6 +30,26 @@ pipeline {
                  bat "mvn verify"
             }
                 }
+                stage('test') {
+            steps {
+                 bat "mvn test"
+            }
+   post {
+    always {
+        cucumber buildStatus: 'UNSTABLE',
+                failedFeaturesNumber: 1,
+                failedScenariosNumber: 1,
+                skippedStepsNumber: 1,
+                failedStepsNumber: 1,
+                reportTitle: 'My report',
+                fileIncludePattern: '**/*rapport.json',
+                jsonReportDirectory: 'target',
+                sortingMethod: 'ALPHABETICAL',
+                trendsLimit: 100
+    }
+}
+ 
+                }
 }
 }
 
